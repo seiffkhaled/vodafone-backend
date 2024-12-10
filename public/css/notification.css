@@ -1,0 +1,90 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.title {
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.logo {
+    max-width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* Container Styles */
+.container {
+    background-color: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+.content {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title h2 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        max-width: 40px;
+        height: 40px;
+    }
+
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .title {
+        margin-bottom: 10px;
+    }
+
+    .title h2 {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        max-width: 30px;
+        height: 30px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+}
