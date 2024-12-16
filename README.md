@@ -2,6 +2,38 @@
 
 ## Setup Instructions
 
+### Download php version 8.2 or higher
+```
+https://windows.php.net/download#php-8.2 
+
+```
+### Add php path to your system environment path
+
+### Download & Install Composer
+```
+https://getcomposer.org/download/
+```
+
+### Add composerSetup/bin path to your system environment path
+
+### Download & Install Mysql
+
+```
+https://dev.mysql.com/downloads/installer/
+
+```
+
+### Download & Install Any Clone Of Apache Server ex: Xampp or Wampserver
+
+```
+
+https://www.apachefriends.org/
+
+https://wampserver.aviatechno.net/
+
+```
+
+
 ### 1. Clone the repository
 
 First, clone the repository to your local machine using the following command:
@@ -30,6 +62,13 @@ php artisan migrate
 ```
 php artisan serve
 ```
+
+### Authentication using laravel sanctum
+
+#### middleware('auth:sanctum') is guard gate to ensure that auth users only can consume these apis by sending token within Authorization header Authorization : Bearer token if any request sent without these tokens passing by this middleware it will get auth failure route login not defined explaining that tokens created when user is successfully logged in and can complete his session consuming all the apis with freshly created token 
+
+
+
 ### Example for requests and responses
 ## with Authorization Header {Bearer token}
 POST /api/user/login
@@ -93,7 +132,7 @@ GET /api/user/tasks?status=pending&start_date=2024-12-01&end_date=2025-01-01
 }
 POST /api/user/subscribe
 ## {
-    "start_date": "2024-12-12",
+    "start_date": "2024-12-12 18",
     "frequency": "weekly",
     "report_time": "00"
 }

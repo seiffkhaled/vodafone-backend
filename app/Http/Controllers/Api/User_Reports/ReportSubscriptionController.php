@@ -23,7 +23,7 @@ class ReportSubscriptionController extends Controller
                 'message' => 'You already have an active subscription.',
             ], 400);
         }
-        $user = User::where('user_id', auth()->id());
+        $user = User::where('id', auth()->id())->first();
         $user->is_subscribed_to_reports = true;
         $user->save();
         $subscription = ReportSubscription::create([
@@ -46,7 +46,7 @@ class ReportSubscriptionController extends Controller
                 'message' => 'You do not have an active subscription.',
             ], 404);
         }
-        $user = User::where('user_id', auth()->id());
+        $user = User::where('id', auth()->id())->first();
         $user->is_subscribed_to_reports = false;
         $user->save();
         $subscription->delete();

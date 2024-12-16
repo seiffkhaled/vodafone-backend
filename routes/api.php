@@ -13,6 +13,6 @@ Route::prefix('user')->group(function () {
     Route::apiResource('tasks', TaskController::class)->middleware('auth:sanctum');
     Route::delete('tasks/batch', [TaskController::class, 'batchDelete'])->middleware('auth:sanctum');
     Route::post('tasks/restore-last', [TaskController::class, 'restoreLast'])->middleware('auth:sanctum');
-    Route::post('subscribe', [ReportSubscriptionController::class, 'subscribe']);
-    Route::post('unsubscribe', [ReportSubscriptionController::class, 'unsubscribe']);
+    Route::post('subscribe', [ReportSubscriptionController::class, 'subscribe'])->middleware('auth:sanctum');
+    Route::post('unsubscribe', [ReportSubscriptionController::class, 'unsubscribe'])->middleware('auth:sanctum');
 });
